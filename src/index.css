@@ -20,3 +20,18 @@
   --color-sslate-900: hsl(202, 55%, 16%);
   --color-sslate-950: hsl(202, 55%, 11%);
 }
+
+@layer components {
+  .inputFieldset.erro {
+    @apply mb-2!;
+  }
+  .inputField.erro {
+    @apply border-new-red! border-2! outline-0!;
+  }
+  .errorIcon.erro {
+    @apply bg-new-red! text-white!;
+  }
+  .errorMsg.erro {
+    @apply inline-block!;
+  }
+}
