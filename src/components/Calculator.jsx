@@ -4,7 +4,7 @@ export default function Calculator() {
   return (
     <div className="p-6">
       <form autocomplete="on" className="flex flex-col justify-center gap-2">
-        <div className="xs:flex-row xs:justify-between xs:items-center flex flex-col items-start justify-center gap-0.5">
+        <div className="xs:flex-row xs:justify-between xs:items-center xs:rounded-tl-[1.2rem] xs:rounded-bl-[1.2rem] flex flex-col items-start justify-center gap-0.5">
           <h1 className="text-sslate-900 text-[1.18rem] font-[700]">
             Mortgage Calculator
           </h1>
@@ -93,32 +93,44 @@ export default function Calculator() {
             Mortgage Type
           </legend>
 
-          <div className="border-sslate-700 text-sslate-900 relative mt-2 flex w-full flex-row items-center gap-2 rounded-[0.3rem] border-1 px-4 py-[0.5rem] text-[0.9rem] font-[700]">
+          <div className="relative mt-2">
             <input
               type="radio"
               id="repayment"
               name="mortageType"
               className="peer hidden"
             />
-            <span className="ring-sslate-700 peer-checked:bg-new-lime peer-checked:ring-new-lime h-2.5 w-2.5 rounded-full ring-1 peer-checked:ring-offset-2"></span>
-            <label htmlFor="repayment">Repayment</label>
+
+            <label
+              htmlFor="repayment"
+              className="peer-checked:bg-new-lime/15 peer-checked:outline-new-lime hover:outline-new-lime active:outline-new-lime focus:outline-new-lime relative flex w-full cursor-pointer flex-row items-center rounded-[0.2rem] border-0 px-4 py-2 pl-10 text-[0.8rem] font-[700] text-slate-900 outline-[1.5px] outline-slate-500 peer-checked:outline-2 hover:cursor-pointer focus:outline-2 active:outline-2"
+            >
+              Repayment
+            </label>
+            <span className="peer-checked:bg-new-lime peer-checked:ring-new-lime absolute top-3 left-4 h-2.5 w-2.5 rounded-full ring-1 ring-slate-700 peer-checked:ring-offset-2"></span>
           </div>
 
-          <div className="border-sslate-700 text-sslate-900 mt-2 flex w-full flex-row items-center gap-2 rounded-[0.3rem] border-1 px-4 py-[0.5rem] text-[0.9rem] font-[700]">
+          <div className="relative mt-2.5">
             <input
               type="radio"
               id="interestOnly"
               name="mortageType"
               className="peer hidden"
             />
-            <span className="ring-sslate-700 peer-checked:bg-new-lime peer-checked:ring-new-lime h-2.5 w-2.5 rounded-full ring-1 peer-checked:ring-offset-2"></span>
-            <label htmlFor="interestOnly">Interest Only</label>
+
+            <label
+              htmlFor="interestOnly"
+              className="peer-checked:bg-new-lime/15 peer-checked:outline-new-lime hover:outline-new-lime active:outline-new-lime focus:outline-new-lime relative flex w-full cursor-pointer flex-row items-center rounded-[0.2rem] border-0 px-4 py-2 pl-10 text-[0.8rem] font-[700] text-slate-900 outline-[1.5px] outline-slate-500 peer-checked:outline-2 hover:cursor-pointer focus:outline-2 active:outline-2"
+            >
+              Interest Only
+            </label>
+            <span className="peer-checked:bg-new-lime peer-checked:ring-new-lime absolute top-3 left-4 h-2.5 w-2.5 rounded-full ring-1 ring-slate-700 peer-checked:ring-offset-2"></span>
           </div>
         </fieldset>
 
         <button
           type="submit"
-          className="bg-new-lime text-sslate-900 mt-2 flex flex-row items-center justify-center gap-2 rounded-full px-8 py-2 text-[0.85rem] font-[700]"
+          className="bg-new-lime text-sslate-900 hover:bg-new-lime/60 mt-3 flex max-w-[15rem] cursor-pointer flex-row items-center justify-center gap-2 rounded-full px-8 py-2 text-[0.85rem] font-[700]"
         >
           <img
             src={calculatorIcon}
