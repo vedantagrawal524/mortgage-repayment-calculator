@@ -1,6 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 @import "tailwindcss";
 
+* {
+  transition: all 0.3s linear;
+}
+
 @theme {
   --font-plus-jakarta-sans: "Plus Jakarta Sans", sans-serif;
+
+  --breakpoint-xs: 620px;
+
+  --color-new-lime: hsl(61, 70%, 52%);
+  --color-new-red: hsl(4, 69%, 50%);
+
+  --color-sslate-100: hsl(202, 86%, 94%);
+  --color-sslate-300: hsl(203, 41%, 72%);
+  --color-sslate-500: hsl(200, 26%, 54%);
+  --color-sslate-700: hsl(200, 24%, 40%);
+  --color-sslate-900: hsl(202, 55%, 16%);
 }

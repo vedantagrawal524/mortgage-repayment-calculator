@@ -1,15 +1,13 @@
+import Calculator from "./components/Calculator";
+import Result from "./components/Result";
+
 export default function App() {
   return (
-    <>
-      <div>
-        Mortgage Calculator Clear All Mortgage Amount Mortgage Term Interest
-        Rate Mortgage Type Repayment Interest Only Calculate Repayments Results
-        shown here Complete the form and click “calculate repayments” to see
-        what your monthly repayments would be. Your results Your results are
-        shown below based on the information you provided. To adjust the
-        results, edit the form and click “calculate repayments” again. Your
-        monthly repayments Total you'll repay over the term
+    <main className="font-plus-jakarta-sans bg-sslate-100 xs:items-center xs:justify-center flex min-h-screen flex-row text-base">
+      <div className="xs:grid-cols-2 grid max-w-[800px] grid-cols-1 bg-white">
+        <Calculator />
+        <Result />
       </div>
-    </>
+    </main>
   );
 }
