@@ -22,16 +22,16 @@
 }
 
 @layer components {
-  .inputFieldset.erro {
+  .inputFieldset.error {
     @apply mb-2!;
   }
-  .inputField.erro {
+  .inputField.error {
     @apply border-new-red! border-2! outline-0!;
   }
-  .errorIcon.erro {
+  .errorIcon.error {
     @apply bg-new-red! text-white!;
   }
-  .errorMsg.erro {
+  .errorMsg.error {
     @apply inline-block!;
   }
 }
