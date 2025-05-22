@@ -17,13 +17,11 @@ export default function Calculator() {
   const handleChange = (e) => {
     const { name, value, type } = e.target;
 
-    // Update value
     setFormData((prev) => ({
       ...prev,
       [name]: type === "radio" ? e.target.id : value,
     }));
 
-    // Clear error if user starts fixing input
     setErrors((prev) => ({
       ...prev,
       [name]: false,
@@ -67,7 +65,12 @@ export default function Calculator() {
 
     let monthly = 0;
     if (formData.mortageType === "repayment") {
-      monthly = (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+      if (r === 0) {
+        monthly = P / n;
+      } else {
+        const pow = Math.pow(1 + r, n);
+        monthly = (P * r * pow) / (pow - 1);
+      }
     } else {
       monthly = P * r;
     }
@@ -106,7 +109,7 @@ export default function Calculator() {
   };
 
   return (
-    <div className="xs:grid-cols-2 xs:rounded-[1.2rem] grid max-w-[700px] grid-cols-1 bg-white">
+    <div className="xs:grid-cols-2 xs:rounded-[1.2rem] xs:m-4 grid max-w-[700px] grid-cols-1 bg-white">
       <form
         onSubmit={handleSubmit}
         autocomplete="on"
@@ -153,12 +156,12 @@ export default function Calculator() {
             <div
               className={`text-new-red errorMsg absolute bottom-[-1.05rem] left-0 z-20 hidden text-[0.65rem] font-[600] ${getErrorClass("mortageAmount")}`}
             >
-              This field is required
+              Enter a valid input
             </div>
           </div>
         </fieldset>
 
-        <div className="xs:grid-cols-2 xs:gap-3.5 mt-2 grid grid-cols-1 gap-3">
+        <div className="xxs:grid-cols-2 xs:gap-3.5 mt-2 grid grid-cols-1 gap-3">
           <fieldset className={`inputFieldset ${getErrorClass("mortageTerm")}`}>
             <label
               htmlFor="mortageTerm"
@@ -186,7 +189,7 @@ export default function Calculator() {
               <div
                 className={`text-new-red errorMsg absolute bottom-[-1.05rem] left-0 z-20 hidden text-[0.65rem] font-[600] ${getErrorClass("mortageTerm")}`}
               >
-                This field is required
+                Enter a valid input
               </div>
             </div>
           </fieldset>
@@ -220,7 +223,7 @@ export default function Calculator() {
               <div
                 className={`text-new-red errorMsg absolute bottom-[-1.05rem] left-0 z-20 hidden text-[0.65rem] font-[600] ${getErrorClass("interestRate")}`}
               >
-                This field is required
+                Enter a valid input
               </div>
             </div>
           </fieldset>

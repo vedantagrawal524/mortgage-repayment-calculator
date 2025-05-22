@@ -8,6 +8,7 @@
 @theme {
   --font-plus-jakarta-sans: "Plus Jakarta Sans", sans-serif;
 
+  --breakpoint-xxs: 375px;
   --breakpoint-xs: 620px;
 
   --color-new-lime: hsl(61, 70%, 52%);

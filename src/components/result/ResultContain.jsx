@@ -1,6 +1,6 @@
 export default function ResultContain(props) {
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex w-full flex-col gap-3">
       <h1 className="text-[1.1rem] font-[600] text-white">Your results</h1>
       <p className="text-sslate-500 text-[0.78rem] font-[500]">
         Your results are shown below based on the information you provided. To
@@ -13,7 +13,7 @@ export default function ResultContain(props) {
           <h2 className="text-sslate-500 text-[0.7rem] font-[500]">
             Your monthly repayments
           </h2>
-          <p className="text-new-lime text-[2.4rem] font-[600]">
+          <p className="text-new-lime w-full overflow-hidden text-[2.4rem] font-[600] text-ellipsis hover:overflow-visible hover:text-[1.4rem]">
             £{props.results.monthly}
           </p>
         </div>
